@@ -1,0 +1,12 @@
+from collections import Counter
+
+try:
+    print("Введите элементы (Ctrl+D для завершения ввода):")
+    items = []
+    while True:
+        item = input().strip().lower()
+        items.append(item)
+except EOFError:
+    item_counts = Counter(items)
+    for item in sorted(item_counts):
+        print(f"{item.upper()} {item_counts[item]}")
